@@ -1,0 +1,44 @@
+//
+//  QQMusic-Prefix.pch
+//  UIPageViewController学习
+//
+//  Created by weiwei on 16/8/31.
+//  Copyright © 2016年 weiwei. All rights reserved.
+//
+
+#ifndef QQMusic_Prefix_pch
+#define QQMusic_Prefix_pch
+
+#import <PureLayout.h>
+#import "QMCollectionView.h"
+
+//categary
+#import "UIView+Extension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* QQMusic_Prefix_pch */
+
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 \
+alpha:1.0]
+
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+
+#define buttomFont(size) [UIFont systemFontOfSize:size]
+
+#define titleButtomFont(a)  [UIFont fontWithName:@"Helvetica" size:a]
+
+#define randomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+
+//weak strong self for retain cycle
+#define WEAK_SELF __weak typeof(self)weakSelf = self
+#define STRONG_SELF __strong typeof(weakSelf)self = weakSelf
+
